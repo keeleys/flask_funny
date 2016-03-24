@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <link type="text/css" rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<h2>{{ title }}</h2>
+<ur>
+    {% for item in plist %}
+        <li>{{ item.name }} - {{ item.sex }}</li>
+    {% endfor %}
+</ur>
+</body>
+</html>
