@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>{{ title }} - is your best source of funny pics,Funny Videos,GIFs,Jokes</title>
+    <meta name="keywords" content="AliFunny,fun,funny,funny Videos,funny Pictures,funny Gif,funny Video Clips,funny Pics,lol,meme,GIF,wtf,fail,video,cosplay,geeky,Instagram,vine,PC,forever alone" />
+    <meta name="description" content="AliFunny has the best funny pics,fun,funny,GIFs,videos,memes,lol,cute,wtf,geeky,cosplay photos on the web. AliFunny is your best source of fun. " />
+    <link href="/static/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="/static/iconfont/iconfont.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="/static/js/jquery.js"></script>
+    <script type="text/javascript" src="/static/js/effect.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.infinitescroll.min.js"></script>
+</head>
+
+<body>
+<!--header-->
+<header class="ali-header">
+    <div class="ali-header-top co">
+        <div class="ali-header-right fr">
+            <ul class="ali-menu-top co">
+                <li  ><a href="/" title="AliFunny">Home</a></li>
+                <li ><a href="/hot-funny.html" title="Hot Funny">Hot Funny</a></li>
+                <li  ><a href="/funny-pictures.html" title="Funny pictures">Funny pictures</a></li>
+                <li  ><a href="/funny-gif.html" title="Funny Gif">Funny Gif</a></li>
+                <li ><a href="/funny-video.html" title="Funny Video">Funny Video</a></li>
+            </ul>
+            <div id="nav-phone">
+                <div class="btn open"><ul><li></li><li></li><li></li></ul></div>
+                <div class="btn close"><ul><li></li><li></li><li></li></ul></div>
+                <nav class="nav-phone">
+                    <ul class="menu">
+                        <li  ><a href="/" title="AliFunny">Home</a></li>
+                <li ><a href="/hot-funny.html" title="Hot Funny">Hot Funny</a></li>
+                <li ><a href="/funny-pictures.html" title="Funny pictures">Funny pictures</a></li>
+                <li ><a href="/funny-gif.html" title="Funny Gif">Funny Gif</a></li>
+                <li  ><a href="/funny-video.html" title="Funny Video">Funny Video</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <h1 class="logo"><a href="/" title="AliFunny - is your best source of funny pics,Funny Videos,GIFs,Jokes">AliFunny</a></h1>
+    </div>
+</header>
+<!--End-->
+
+
+{% macro class_name(type) -%}
+    {% if type == '3' %}
+    video
+    {% elif type == '2'%}
+    gif
+    {% else %}
+    ""
+    {% endif %}
+{%- endmacro %}
+
+<section class="ali-section co">
+	<!--left-->
+    <div class="ali-section-fl" id="huilang">
+
+        {% for blog in page.items %}
+
+    	<div class="section-list">
+            <h2>{{ class_name(blog.type) }}
+            <a href="/{{blog.id}}.html" title="{{blog.title}}" target="_blank" >{{blog.title}}</a></h2>
+            <a href="/{{ blog.id }}.html" title="{{ blog.title }}" class="{{ class_name(blog.type) }}" target="_blank" >
+                {% if blog.type =='2' or blog.type =='3' %}
+                <i></i>
+                {% endif %}
+                <img alt="{{ blog.title }}" src="{{blog.img }}">
+            </a>
+            <p>{{blog.check_num or '0'}} Points .  {{blog.create_time}}</p>
+            <div class="share">
+                <a href="http://www.facebook.com/sharer.php?u=http://alifunny.com/{{ blog.id}}.html" title="Share Facebook" class="facebook" target="_blank" >Facebook</a>
+                <a href="http://plus.google.com/share?url=http://alifunny.com/{{ blog.id}}.html" title="Share Google+" class="google" target="_blank" >Google+</a>
+                <a href="http://twitter.com/share?url=http://alifunny.com/{{ blog.id}}.html&amp;text=${blog.title},Relive and Share the World's Moments.&amp;via=" title="Share Twitter" class="twitter" target="_blank" >Twitter</a>
+                <a href="http://pinterest.com/pin/create/button/?url=http://alifunny.com/{{ blog.id}}.html&amp;media={{  blog.img}}&amp;description={{blog.title}},Relive and Share the World's Moments." title="Share Pinterest" class="pinterest" target="_blank" >Pinterest</a></div>
+		</div>
+        {% endfor %}
+
+    </div>
+    <!--right-->
+    <div class="ali-section-fr">
+        <div class="fr-list">
+            {% for b in random_blog %}
+            <a href="/{{b.id}}.html" target="_blank" title="{{b.title}}">
+                <p><img alt="{{b.title}}" src="{{ b.img}}"></p>
+                <h3>{{b.title}}</h3>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<div class="yc_page" style="visibility: hidden">
+    <div class='pagination'>
+        <span class='current'>${pages.pageNum}</span>
+        {% for i in range(2,page.pages) %}
+        <a href='/list/{{typeIndex}}_{{ i }}.html' class='inactive' >{{ i }}</a>
+        {% endfor %}
+    </div>
+</div>
+<!--footer-->
+<footer>
+    Copyright © 2016 Ali Funny, All Rights Reserved.
+</footer>
+<!--footer End-->
+
+<script>
+    var infinite_scroll = {
+        loading: {
+            img: "/static/images/loading.gif",
+            msgText: "Loading...",
+            finishedMsg: "No more the"
+        },
+        nextSelector:".pagination a",
+        navSelector:".pagination",
+        itemSelector:"div.section-list",
+        contentSelector:"#huilang"
+    };
+    $( infinite_scroll.contentSelector ).infinitescroll( infinite_scroll );
+    
+    $(".ali-menu-top li").eq("{{ typeIndex }}").addClass("current-cat")
+</script>
+
+</body>
+</html>

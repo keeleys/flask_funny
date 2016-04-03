@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="telephone=no" name="format-detection">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<title>{{blog.title}} • AliFunny</title>
+<meta name="keywords" content="{{blog.keys or 'alifun'}}" />
+<meta name="description" content="{{blog.title}}" />
+<link href="/static/css/style.css" rel="stylesheet" type="text/css" />
+<link href="/static/iconfont/iconfont.css" rel="stylesheet" type="text/css" />
+<link href="/static/css/video-js.min.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/static/js/jquery.js"></script>
+<script type="text/javascript" src="/static/js/effect.js"></script>
+<script type="text/javascript" src="/static/js/video.js"></script>
+<!--[if lt IE 9]>
+  <script src="http://html5media.googlecode.com/svn/trunk/src/html5media.min.js">
+  </script>
+<![endif]-->
+<!--[if IE]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+  </script>
+<![endif]-->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-56e0c2957bb3318b"></script>
+</head>
+
+<body>
+<!--header-->
+<header class="ali-header">
+    <div class="ali-header-top co">
+        <div class="ali-header-right fr">
+            <ul class="ali-menu-top co">
+                <li><a href="/" title="AliFunny">Home</a></li>
+                <li><a href="/hot-funny.html" title="Hot Funny">Hot Funny</a></li>
+                <li><a href="/funny-pictures.html" title="Funny pictures">funny pictures</a></li>
+                <li><a href="/funny-gif.html" title="Funny Gif">Funny Gif</a></li>
+                <li><a href="/funny-video.html" title="Funny Video">Funny Video</a></li>
+            </ul>
+            <div id="nav-phone">
+                <div class="btn open"><ul><li></li><li></li><li></li></ul></div>
+                <div class="btn close"><ul><li></li><li></li><li></li></ul></div>
+                <nav class="nav-phone">
+                <ul class="menu">
+                    <li ><a href="/funny/staticstatic" title="AliFunny">Home</a></li>
+                    <li ><a href="/funny/static/hot-funny.html" title="Hot Funny">Hot Funny</a></li>
+                    <li ><a href="/funny-pictures.html" title="Funny pictures">funny pictures</a></li>
+                    <li ><a href="/funny-gif.html" title="Funny Gif">Funny Gif</a></li>
+                    <li ><a href="/funny-video.html" title="Funny Video">Funny Video</a></li>
+                </ul>
+                </nav>
+            </div>
+        </div>
+        <h1 class="logo"><a href="/" title="AliFunny - is your best source of funny pics,Funny Videos,GIFs,Jokes">AliFunny</a></h1>
+    </div>
+</header>
+<!--End-->
+<section class="ali-section co">
+	<!--left-->
+    <div class="ali-section-fl">
+    	<div class="section-list">
+            <h1>{{blog.title}}</h1>
+            <p>{{blog.check_num}} Points .  {{blog.create_time}}</p>
+            <div class="share-bnt co">
+            {% if afterBlog != None %}
+                <a href="/{{afterBlog.id}}.html" class="next-post" title="Next Post" >Next Post</a>
+            {% endif %}
+                <a href="http://www.facebook.com/sharer.php?u=http://alifunny.com/${blog.id}.html" title="Share Facebook" class="facebook" target="_blank" ><i class="iconfont icon-facebook"></i> Facebook</a><a href="http://twitter.com/share?url=http://alifunny.com/${blog.id}.html&amp;text={{blog.title}},Relive and Share the World's Moments.&amp;via=" title="Share Twitter" class="twitter" target="_blank" ><i class="iconfont icon-twitter"></i> Twitter</a><div title="More" class="addthis_sharing_toolbox" ></div>
+            </div>
+            <div class="content">
+                {% if blog.type == "3" %}
+                <video id="really-cool-video" class="video-js vjs-default-skin" controls autoplay width="100%" height="264" poster="${blog.img}" data-setup='{}'>
+                    <source src="{{blog.mp4}}" type="video/mp4">
+                </video>
+                {% elif blog.type == "2" %}
+                <img alt="{{blog.title}}" src="{{blog.mp4}}">
+                {% else %}
+                <img alt="{{blog.title}}" src="{{blog.img}}">
+                {% endif %}
+            </div>
+            <div class="share"><a href="http://www.facebook.com/sharer.php?u=http://alifunny.com/${blog.id}.html" title="Share Facebook" class="facebook" target="_blank" >Facebook</a><a href="http://plus.google.com/share?url=http://alifunny.com/${blog.id}.html" title="Share Google+" class="google" target="_blank" >Google+</a><a href="http://twitter.com/share?url=http://alifunny.com/${blog.id}.html&amp;text={{blog.title}},Relive and Share the World's Moments.&amp;via=" title="Share Twitter" class="twitter" target="_blank" >Twitter</a><a href="http://pinterest.com/pin/create/button/?url=http://alifunny.com/${blog.id}.html&amp;media=${blog.img}&amp;description={{blog.title}},Relive and Share the World's Moments." title="Share Pinterest" class="pinterest" target="_blank" >Pinterest</a></div>
+		</div>
+        <div id="disqus_thread"></div>
+		<script>
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = '//alifunny.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+        </script>
+    </div>
+    <!--right-->
+    <div class="ali-section-fr fr-detailed">
+    	<div>
+            <div class="fr-list">
+                {% for b in random_blog %}
+                <a href="/{{b.id}}.html" target="_blank" title="{{b.title}}">
+                    <p><img alt="{{b.title}}" src="{{ b.img}}"></p>
+                    <h3>{{b.title}}</h3>
+                </a>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+</section>
+<!--footer-->
+<footer>
+	Copyright © 2016 Ali Funny, All Rights Reserved.
+</footer>
+<!--footer End-->
+</body>
+</html>

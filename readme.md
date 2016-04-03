@@ -32,3 +32,7 @@ def blog_list(ptype):
     return render_template('list.html', blist=blist)
 
 ```
+
+## 参考
+
+[sqlalchemy](http://dormousehole.readthedocs.org/en/latest/patterns/sqlalchemy.html)
