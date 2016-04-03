@@ -3,8 +3,7 @@
 # Created by tianjun on 16/2/21
 
 
-from funny import views,app
+from funny import app
 if __name__ == '__main__':
-
-    app.run(debug=True)
+    app.run()
 
