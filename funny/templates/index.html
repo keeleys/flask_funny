@@ -65,8 +65,7 @@
         {% for blog in page.items %}
 
     	<div class="section-list">
-            <h2>{{ class_name(blog.type) }}
-            <a href="/{{blog.id}}.html" title="{{blog.title}}" target="_blank" >{{blog.title}}</a></h2>
+            <h2><a href="/{{blog.id}}.html" title="{{blog.title}}" target="_blank" >{{blog.title}}</a></h2>
             <a href="/{{ blog.id }}.html" title="{{ blog.title }}" class="{{ class_name(blog.type) }}" target="_blank" >
                 {% if blog.type =='2' or blog.type =='3' %}
                 <i></i>

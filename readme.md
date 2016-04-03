@@ -3,8 +3,9 @@
 ```python
 # Python 2.7
 
+cd youapppath
 gunicorn  -b0.0.0.0:8000 funny:app
-
+supervisord -c supervisor.conf
 
 ```
 
