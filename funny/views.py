@@ -39,7 +39,7 @@ def blog_list(type, page):
     elif type == 1:
         page_blog = Blog.query.order_by("check_num desc").paginate(page, PAGE_SIZE, False)
     else:
-        page_blog = Blog.query.filter_by(type=(type - 1)).order_by("check_num desc").paginate(page, PAGE_SIZE, False)
+        page_blog = Blog.query.filter_by(type=(type - 1)).order_by("create_time desc").paginate(page, PAGE_SIZE, False)
 
     return render_template('index.html', page=page_blog, typeIndex=type, random_blog=selectRandom(), )
 
