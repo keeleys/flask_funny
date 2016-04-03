@@ -1,18 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # Created by tianjun on 16/2/21
-from funny.models import Blog
 from funny import db
 
 engine = db.engine
-
-
-def selectHome():
-    return engine.execute(" select * from blog order by content_id desc limit 0 ,16")
-
-
-def select_page(off=1, limit=10):
-    return Blog.query.all()
 
 
 def updateCheck(id):

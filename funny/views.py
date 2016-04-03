@@ -26,9 +26,11 @@ def index():
 @app.route('/<int:pro_id>.html')
 def detail(pro_id=0):
     blog = Blog.query.filter_by(id=pro_id).first()
-    afterBlog = selectBefore(pro_id)
-    return render_template('detail.html', random_blog=selectRandom(),
-                           pid=pro_id, blog=blog, afterBlog=afterBlog)
+    updateCheck(pro_id)
+    return render_template('detail.html',
+                           random_blog=selectRandom(),
+                           pid=pro_id, blog=blog,
+                           afterBlog=selectBefore(pro_id))
 
 
 # http://127.0.0.1:5000/list-123.html
