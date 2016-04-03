@@ -36,3 +36,4 @@ def blog_list(ptype):
 ## 参考
 
 [sqlalchemy](http://dormousehole.readthedocs.org/en/latest/patterns/sqlalchemy.html)
+[flask](http://dormousehole.readthedocs.org/en/latest/quickstart.html#id7)
