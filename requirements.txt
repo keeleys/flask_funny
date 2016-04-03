@@ -2,3 +2,5 @@ tornado
 Flask
 Flask-SQLAlchemy
 MySQL-python
+gunicorn
+supervisor
