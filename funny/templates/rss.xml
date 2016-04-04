@@ -7,8 +7,8 @@
             {% for entry in blogs %}
                 <item>
                   <title>{{ entry.title }}</title>
-                  <link>http://alifunny.com/{{ entry.id }}</link>
-                  <guid>http://alifunny.com/{{ entry.id }}</guid>
+                  <link>http://alifunny.com/{{ entry.id }}.html</link>
+                  <guid>http://alifunny.com/{{ entry.id }}.html</guid>
                   <pubDate>{{ entry.create_time.strftime('%Y-%m-%dT%H:%M:%SZ') }}</pubDate>
                   <description>{{ entry.img}}</description>
                 </item>
