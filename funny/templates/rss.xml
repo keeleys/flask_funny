@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>alifunny.com</title>
+        <link>http://alifunny.com</link>
+        <description>AliFunny is your best source of funny pics,Funny Videos,GIFs,Jokes</description>
+            {% for entry in blogs %}
+                <item>
+                  <title>{{ entry.title }}</title>
+                  <link>http://alifunny.com/{{ entry.id }}</link>
+                  <guid>http://alifunny.com/{{ entry.id }}</guid>
+                  <pubDate>{{ entry.create_time.strftime('%Y-%m-%dT%H:%M:%SZ') }}</pubDate>
+                  <description>{{ entry.img}}</description>
+                </item>
+            {% endfor %}
+    </channel>
+</rss>

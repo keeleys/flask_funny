@@ -64,3 +64,11 @@ def funny_gif():
 @app.route('/funny-video.html')
 def funny_video():
     return blog_list(4, 1)
+
+
+@app.route('/rss.xml')
+def rss():
+    page = Blog.query.order_by("create_time desc").paginate(1, 1000, False)
+    return render_template('rss.xml', blogs=page.items)
+
+
