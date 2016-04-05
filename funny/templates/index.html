@@ -6,7 +6,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <title>{{ title }} - is your best source of funny pics,Funny Videos,GIFs,Jokes</title>
+    <title>AliFunny - is your best source of funny pics,Funny Videos,GIFs,Jokes</title>
     <meta name="keywords" content="AliFunny,fun,funny,funny Videos,funny Pictures,funny Gif,funny Video Clips,funny Pics,lol,meme,GIF,wtf,fail,video,cosplay,geeky,Instagram,vine,PC,forever alone" />
     <meta name="description" content="AliFunny has the best funny pics,fun,funny,GIFs,videos,memes,lol,cute,wtf,geeky,cosplay photos on the web. AliFunny is your best source of fun. " />
     <link href="/css/style.css" rel="stylesheet" type="text/css" />
@@ -122,7 +122,11 @@
     };
     $( infinite_scroll.contentSelector ).infinitescroll( infinite_scroll );
     
-    $(".ali-menu-top li").eq("{{ typeIndex }}").addClass("current-cat")
+    $(".ali-menu-top li").eq("{{ typeIndex or 0}}").addClass("current-cat")
+
+    title = "- is your best source of funny pics,Funny Videos,GIFs,Jokes"
+    title = $(".ali-menu-top li a").eq("{{ typeIndex or 0}}").attr("title") + title;
+     $("title").text(title)
 </script>
 
 </body>

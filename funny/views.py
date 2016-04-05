@@ -16,7 +16,7 @@ PAGE_SIZE = 10
 @app.route('/index.html')
 def index():
     page = request.args.get('page', 1, type=int)
-    page_blog = Blog.query.order_by("create_time desc").paginate(page, PAGE_SIZE, False)
+    page_blog = Blog.query.order_by(Blog.create_time.desc()).paginate(page, PAGE_SIZE, False)
     random_blog = selectRandom()
     return render_template('index.html', random_blog=random_blog,
                            page=page_blog, title="AliFunny", typeIndex="0")
@@ -37,11 +37,11 @@ def detail(pro_id=0):
 @app.route('/list/<int:type>_<int:page>.html')
 def blog_list(type, page):
     if type == 0:
-        page_blog = Blog.query.order_by("create_time desc").paginate(page, PAGE_SIZE, False)
+        page_blog = Blog.query.order_by(Blog.create_time.desc()).paginate(page, PAGE_SIZE, False)
     elif type == 1:
-        page_blog = Blog.query.order_by("check_num desc").paginate(page, PAGE_SIZE, False)
+        page_blog = Blog.query.order_by(Blog.check_num.desc()).paginate(page, PAGE_SIZE, False)
     else:
-        page_blog = Blog.query.filter_by(type=(type - 1)).order_by("create_time desc").paginate(page, PAGE_SIZE, False)
+        page_blog = Blog.query.filter_by(type=(type - 1)).order_by(Blog.create_time.desc()).paginate(page, PAGE_SIZE, False)
 
     return render_template('index.html', page=page_blog, typeIndex=type, random_blog=selectRandom(), )
 
@@ -68,7 +68,7 @@ def funny_video():
 
 @app.route('/rss.xml')
 def rss():
-    page = Blog.query.order_by("create_time desc").paginate(1, 1000, False)
+    page = Blog.query.order_by(Blog.create_time.desc()).paginate(1, 1000, False)
     return render_template('rss.xml', blogs=page.items)
 
 

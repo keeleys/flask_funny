@@ -1,45 +1,16 @@
-## 一个flask小例子
+## flask 项目
 
+启动方式 gunicorn + supervisord
 ```python
 # Python 2.7
 
 cd youapppath
-gunicorn  -b0.0.0.0:8000 funny:app
+# gunicorn  -b0.0.0.0:8000 funny:app
 supervisord -c supervisor.conf
 
 ```
 
-## controller simple
 
-```python
-# http://127.0.0.1:5000/
-@app.route('/')
-@app.route('/index.html')
-def index():
-    plist = funnlService.get_user_list()
-    title = "hello"
-    return render_template('index.html', plist=plist, title=title)
-
-
-# http://127.0.0.1:5000/123.html
-@app.route('/<int:pro_id>.html')
-def detail(pro_id=0):
-     app.logger.info('product %s' % pro_id)
-     return render_template('detail.html', pid=pro_id)
-
-
-# http://127.0.0.1:5000/list-123.html
-@app.route('/list-<ptype>.html')
-def blog_list(ptype):
-    blist = funnlService.get_blog_list()
-    return render_template('list.html', blist=blist)
-
-```
-
-## 参考
-
-[sqlalchemy](http://dormousehole.readthedocs.org/en/latest/patterns/sqlalchemy.html)
-[flask](http://dormousehole.readthedocs.org/en/latest/quickstart.html#id7)
 ## gunicorn + supervisor
 
 supervisor.conf
@@ -65,3 +36,10 @@ supervisorctl -c supervisor.conf reload                    重新载入 配置�
 supervisorctl -c supervisor.conf start [all]|[appname]     启动指定/所有 supervisor管理的程序进程
 supervisorctl -c supervisor.conf stop [all]|[appname]      关闭指定/所有 supervisor管理的程序进程
 ```
+关闭和启动貌似都没效果 是因为配置不全,目前我是用kill pid方式来进行关闭的,配置全之后可以用浏览器访问监控程序的运行.
+
+## 参考
+
+[sqlalchemy](http://dormousehole.readthedocs.org/en/latest/patterns/sqlalchemy.html)
+[flask](http://dormousehole.readthedocs.org/en/latest/quickstart.html#id7)
+[supervisord](http://feilong.me/2011/03/monitor-processes-with-supervisord)
