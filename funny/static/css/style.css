@@ -49,7 +49,7 @@ a:hover{ color:#09f; text-decoration:none; -webkit-tap-highlight-color:rgba(0,0,
 .ali-section-fl .section-list a.gif,.ali-section-fl .section-list a.video{ position:relative;}
 .ali-section-fl .section-list a.gif i,.ali-section-fl .section-list a.video i{ display:block; width:70px; height:70px; position:absolute; left:50%; top:50%; margin:-35px 0 0 -35px;}
 .ali-section-fl .section-list a.video i{ background-position:-90px 0;}
-.ali-section-fl .section-list .share a{ display:inline-block; width:175px; border-radius:5px; text-align:center; padding:10px 0; color:#fff; font-weight:bold; font-size:14px; margin:0 3px;}
+.ali-section-fl .section-list .share a{ display:inline-block; width:173px; border-radius:5px; text-align:center; padding:10px 0; color:#fff; font-weight:bold; font-size:14px; margin:0 3px;}
 .ali-section-fl .section-list .share a.facebook{ background:#3d5e96;}
 .ali-section-fl .section-list .share a.facebook:hover{ background:#3fadea;}
 .ali-section-fl .section-list .share a.twitter{ background:#3fadea;}
