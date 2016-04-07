@@ -10,7 +10,7 @@
                   <link>http://alifunny.com/{{ entry.id }}.html</link>
                   <guid>http://alifunny.com/{{ entry.id }}.html</guid>
                   <pubDate>{{ entry.create_time.strftime('%Y-%m-%dT%H:%M:%SZ') }}</pubDate>
-                  <description>{{ entry.img}}</description>
+                  <description><img src="{{ entry.img}}"></description>
                 </item>
             {% endfor %}
     </channel>

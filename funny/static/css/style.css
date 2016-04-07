@@ -33,7 +33,6 @@ a:hover{ color:#09f; text-decoration:none; -webkit-tap-highlight-color:rgba(0,0,
 .ali-section-fl .section-list,.ali-section-fl .section-list h2{padding-bottom:10px;}
 .ali-section-fl .section-list h2,.ali-section-fl .section-list h1{ font-size:20px;}
 .ali-section-fl .section-list p{ color:#999; padding:10px 0;}
-.ali-section-fl .section-list a img{max-height:700px;}
 .ali-section-fl .section-list .share-bnt{ padding-bottom:15px;}
 .ali-section-fl .section-list .share-bnt a.next-post,.ali-section-fl .section-list a.gif i,.ali-section-fl .section-list a.video i{ background:url(../images/icon.png) no-repeat;}
 .ali-section-fl .section-list .share-bnt a.next-post{ width:93px; height:35px; text-indent:-9999em; background-position:-170px 0; display:block; float:right;}
@@ -45,11 +44,11 @@ a:hover{ color:#09f; text-decoration:none; -webkit-tap-highlight-color:rgba(0,0,
 .ali-section-fl .section-list .content{ padding-bottom:15px;}
 .ali-section-fl .section-list .content img{ display:block; margin:0 auto;}
 .ali-section-fl .section-list .ad-detailed{ padding-bottom:10px;}
-.ali-section-fl .section-list a img{ max-width:728px;}
+.ali-section-fl .section-list a img{ width:500px; max-height:700px;}
 .ali-section-fl .section-list a.gif,.ali-section-fl .section-list a.video{ position:relative;}
 .ali-section-fl .section-list a.gif i,.ali-section-fl .section-list a.video i{ display:block; width:70px; height:70px; position:absolute; left:50%; top:50%; margin:-35px 0 0 -35px;}
 .ali-section-fl .section-list a.video i{ background-position:-90px 0;}
-.ali-section-fl .section-list .share a{ display:inline-block; width:173px; border-radius:5px; text-align:center; padding:10px 0; color:#fff; font-weight:bold; font-size:14px; margin:0 3px;}
+.ali-section-fl .section-list .share a{ display:inline-block; width:175px; border-radius:5px; text-align:center; padding:10px 0; color:#fff; font-weight:bold; font-size:14px; margin:0 3px;}
 .ali-section-fl .section-list .share a.facebook{ background:#3d5e96;}
 .ali-section-fl .section-list .share a.facebook:hover{ background:#3fadea;}
 .ali-section-fl .section-list .share a.twitter{ background:#3fadea;}
@@ -66,7 +65,7 @@ a:hover{ color:#09f; text-decoration:none; -webkit-tap-highlight-color:rgba(0,0,
 .ali-section-fr .fr-list a h3{ font-size:14px; height:32px; overflow:hidden;}
 #infscr-loading{width: 120px; padding:10px 0; border-radius:3px; position: fixed; left: 50%; bottom: 220px; background:#4792FF; color:#fff; text-align:center; margin-left: -60px;}
 /* footer */
-footer{ text-align:center; padding:20px 0; background:#fafafa; margin-top:20px;}
+footer{ text-align:center; padding:20px 0; background:#fafafa; margin-top:20px; color:#666;}
 @media only screen and (max-width:1024px){
 .ali-section{ width:100%;}
 .ali-section-fl{ margin-left:10px; width:690px;}
@@ -77,7 +76,7 @@ footer{ text-align:center; padding:20px 0; background:#fafafa; margin-top:20px;}
 }
 @media only screen and (max-width:960px){
 .ali-section-fl{ width:620px;}
-.ali-section-fl .section-list a img{ max-width:100%;}
+.ali-section-fl .section-list a img{ max-width:100%;  max-height:inherit;}
 .ali-section-fl .section-list .share a{ width:149px;}
 }
 @media only screen and (max-width:800px){
@@ -91,7 +90,6 @@ footer{ text-align:center; padding:20px 0; background:#fafafa; margin-top:20px;}
 .ali-section .fr-detailed div .fr-list a p{ width:254px; height:89px;}
 }
 @media only screen and (max-width:768px){
-.ali-section-fl .section-list a img{max-width:100%;}
 .ali-section-fl .section-list .share a{ width:181px;}
 .ali-section .fr-detailed div .fr-list{ clear:both; overflow:hidden; padding:10px 0 0;}
 .ali-section .fr-detailed div .fr-list a{ float:left; width:243px; margin:0 3px;}
@@ -116,8 +114,8 @@ footer{ text-align:center; padding:20px 0; background:#fafafa; margin-top:20px;}
 .ali-section .fr-detailed div .fr-list a p{ width:317px; height:110px;}
 }
 @media only screen and (max-width:640px){
-.ali-section-fl .section-list a.gif i,.ali-section-fl .section-list a.video i{ width:35px; height:35px; margin:-18px 0 0 -18px;}
-.ali-section-fl .section-list a.video i{ background-size:132px 35px; background-position:-45px 0;}
+.ali-section-fl .section-list a.gif i,.ali-section-fl .section-list a.video i{ width:35px; height:35px; margin:-18px 0 0 -18px; background-size:132px 35px;}
+.ali-section-fl .section-list a.video i{ background-position:-45px 0;}
 .ali-section-fl .section-list .share a{ width:149px;}
 .ali-section .fr-detailed div .fr-list a{ width:304px;}
 .ali-section .fr-detailed div .fr-list a p{ width:304px; height:106px;}
