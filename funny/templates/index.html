@@ -72,7 +72,7 @@
                 {% endif %}
                 <img alt="{{ blog.title }}" src="{{blog.img }}">
             </a>
-            <p>{{blog.check_num or '0'}} Points · ${blog.create_time, dateFormat="MM/dd/Y"}</p>
+            <p>{{blog.check_num or '0'}} Points · {{blog.create_time.strftime('%Y-%m-%d')}}</p>
             <div class="share">
                 <a href="http://www.facebook.com/sharer.php?u=http://alifunny.com/{{ blog.id}}.html" title="Share Facebook" class="facebook" target="_blank" >Facebook</a>
                 <a href="http://plus.google.com/share?url=http://alifunny.com/{{ blog.id}}.html" title="Share Google+" class="google" target="_blank" >Google+</a>
