@@ -61,7 +61,7 @@
     <div class="ali-section-fl">
     	<div class="section-list">
             <h1>{{blog.title}}</h1>
-            <p>{{blog.check_num}} Points .  {{blog.create_time}}</p>
+            <p>{{blog.check_num}} Points .  {{blog.create_time.strftime('%Y.%m.%d')}}</p>
             <div class="share-bnt co">
             {% if afterBlog != None %}
                 <a href="/{{afterBlog.id}}.html" class="next-post" title="Next Post" >Next Post</a>
