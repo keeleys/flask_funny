@@ -48,7 +48,7 @@ a:hover{ color:#09f; text-decoration:none; -webkit-tap-highlight-color:rgba(0,0,
 .ali-section-fl .section-list a.gif,.ali-section-fl .section-list a.video{ position:relative;}
 .ali-section-fl .section-list a.gif i,.ali-section-fl .section-list a.video i{ display:block; width:70px; height:70px; position:absolute; left:50%; top:50%; margin:-35px 0 0 -35px;}
 .ali-section-fl .section-list a.video i{ background-position:-90px 0;}
-.ali-section-fl .section-list .share a{ display:inline-block; width:175px; border-radius:5px; text-align:center; padding:10px 0; color:#fff; font-weight:bold; font-size:14px; margin:0 3px;}
+.ali-section-fl .section-list .share a{ display:inline-block; width:173px; border-radius:5px; text-align:center; padding:10px 0; color:#fff; font-weight:bold; font-size:14px; margin:0 3px;}
 .ali-section-fl .section-list .share a.facebook{ background:#3d5e96;}
 .ali-section-fl .section-list .share a.facebook:hover{ background:#3fadea;}
 .ali-section-fl .section-list .share a.twitter{ background:#3fadea;}
@@ -69,7 +69,8 @@ footer{ text-align:center; padding:20px 0; background:#fafafa; margin-top:20px; 
 @media only screen and (max-width:1024px){
 .ali-section{ width:100%;}
 .ali-section-fl{ margin-left:10px; width:690px;}
-.ali-section-fl .section-list .share a{ width:166px;}
+.ali-section-fl .section-list .share{display:-webkit-box; display:box;}
+.ali-section-fl .section-list .share a{width:100%; display:block; box-flex:1; -webkit-box-flex:1;}
 .ali-section-fr{ margin-right:10px;}
 .ali-section-fl .section-list .ad-detailed img{ width:100%;}
 .ali-section-fr .fr-list a h3{ height:35px;}
@@ -77,12 +78,10 @@ footer{ text-align:center; padding:20px 0; background:#fafafa; margin-top:20px; 
 @media only screen and (max-width:960px){
 .ali-section-fl{ width:620px;}
 .ali-section-fl .section-list a img{ max-width:100%;  max-height:inherit;}
-.ali-section-fl .section-list .share a{ width:149px;}
 }
 @media only screen and (max-width:800px){
 .ali-section-fl{ float:none; width:initial; margin:0 10px;}
 .ali-section-fr{ display:none;}
-.ali-section-fl .section-list .share a{ width:189px;}
 .ali-section .fr-detailed{ display:block; width:100%; margin:0;}
 .ali-section .fr-detailed div{ padding:0 10px;}
 .ali-section .fr-detailed div .fr-list{ clear:both; overflow:hidden; padding:10px 0 0;}
@@ -90,33 +89,28 @@ footer{ text-align:center; padding:20px 0; background:#fafafa; margin-top:20px; 
 .ali-section .fr-detailed div .fr-list a p{ width:254px; height:89px;}
 }
 @media only screen and (max-width:768px){
-.ali-section-fl .section-list .share a{ width:181px;}
 .ali-section .fr-detailed div .fr-list{ clear:both; overflow:hidden; padding:10px 0 0;}
 .ali-section .fr-detailed div .fr-list a{ float:left; width:243px; margin:0 3px;}
 .ali-section .fr-detailed div .fr-list a p{ width:243px; height:85px;}
 .ali-section .fr-detailed div .fr-list a h3{ font-size:12px;}
 }
 @media only screen and (max-width:736px){
-.ali-section-fl .section-list .share a{ width:173px;}
 .ali-section .fr-detailed div .fr-list a{ width:232px;}
 .ali-section .fr-detailed div .fr-list a p{ width:232px; height:81px;}
 }
 @media only screen and (max-width:690px){
-.ali-section-fl .section-list .share a{ width:161px;}
 .ali-section .fr-detailed div .fr-list a{ width:217px;}
 .ali-section .fr-detailed div .fr-list a p{ width:217px; height:76px;}
 }
 @media only screen and (max-width:667px){
 .ali-menu-top li a{ padding:0 10px;}
 .ali-section-fl .section-list h2{ font-size:18px;}
-.ali-section-fl .section-list .share a{ width:155px;}
 .ali-section .fr-detailed div .fr-list a{ width:317px;}
 .ali-section .fr-detailed div .fr-list a p{ width:317px; height:110px;}
 }
 @media only screen and (max-width:640px){
 .ali-section-fl .section-list a.gif i,.ali-section-fl .section-list a.video i{ width:35px; height:35px; margin:-18px 0 0 -18px; background-size:132px 35px;}
 .ali-section-fl .section-list a.video i{ background-position:-45px 0;}
-.ali-section-fl .section-list .share a{ width:149px;}
 .ali-section .fr-detailed div .fr-list a{ width:304px;}
 .ali-section .fr-detailed div .fr-list a p{ width:304px; height:106px;}
 }
@@ -136,29 +130,25 @@ footer{ text-align:center; padding:20px 0; background:#fafafa; margin-top:20px; 
 .nav-phone>ul>li:first-child{border-top:0}
 .nav-phone>ul>li>a{display:block;height:44px;line-height:44px;font-size:1.333333333333333em;color:#FFF;cursor:pointer; text-indent:10px;}
 .ali-header-top .logo a{ width:90px; height:22px; background-size:90px 22px; margin-top:13px;}
-.ali-section-fl .section-list .share a{ width:139px;}
 .ali-section .fr-detailed div .fr-list a{ width:284px;}
 .ali-section .fr-detailed div .fr-list a p{ width:284px; height:99px;}
 }
 @media only screen and (max-width:598px){
 .ali-section{ padding-top:60px;}
 .ali-section-fl .section-list h2{ font-size:14px;}
-.ali-section-fl .section-list .share a{ width:138px; padding:7px 0;}
+.ali-section-fl .section-list .share a{ padding:7px 0;}
 .ali-section .fr-detailed div .fr-list a{ width:268px;}
 .ali-section .fr-detailed div .fr-list a p{ width:268px; height:94px;}
 }
 @media only screen and (max-width:568px){
-.ali-section-fl .section-list .share a{ width:131px;}
 .ali-section .fr-detailed div .fr-list a{ width:283px;}
 .ali-section .fr-detailed div .fr-list a p{ width:283px; height:78px;}
 }
 @media only screen and (max-width:533px){
-.ali-section-fl .section-list .share a{ width:122px;}
 .ali-section .fr-detailed div .fr-list a{ width:250px;}
 .ali-section .fr-detailed div .fr-list a p{ width:250px; height:87px;}
 }
 @media only screen and (max-width:480px){
-.ali-section-fl .section-list .share a{ width:109px;}
 .ali-section-fl .section-list h1{ font-size:18px;}
 .ali-section-fl .section-list .share-bnt,.ali-section-fl .section-list .content{ padding-bottom:10px;}
 .ali-section-fl .section-list .content img{ width:100%;}
@@ -166,27 +156,24 @@ footer{ text-align:center; padding:20px 0; background:#fafafa; margin-top:20px; 
 .ali-section .fr-detailed div .fr-list a p{ width:224px; height:78px;}
 }
 @media only screen and (max-width:414px){
-.ali-section-fl .section-list .share a{ width:92px;}
 .ali-section-fr .fr-list a h3{ height:inherit;}
 .ali-section .fr-detailed div .fr-list a{ width:100%; margin:0; float:inherit;}
 .ali-section .fr-detailed div .fr-list a p{ width:100%; height:125px;}
 }
 @media only screen and (max-width:384px){
-.ali-section-fl .section-list .share a{ width:85px; font-size:12px;}
+.ali-section-fl .section-list .share a{ font-size:12px;}
 .ali-section-fl .section-list h1{ font-size:14px;}
 }
 @media only screen and (max-width:375px){
-.ali-section-fl .section-list .share a{ width:82px;}
 .ali-section-fl .section-list h1{ font-size:16px;}
 }
 @media only screen and (max-width:360px){
-.ali-section-fl .section-list .share a{ width:79px;}
 .ali-section-fl .section-list .share-bnt a.facebook,.ali-section-fl .section-list .share-bnt a.twitter,.ali-section-fl .section-list .share-bnt a.gengduo{ margin-right:7px;}
 .ali-section-fl .section-list .share-bnt a.facebook i,.ali-section-fl .section-list .share-bnt a.twitter i{ display:none;}
 }
 @media only screen and (max-width:320px){
 .ali-section-fl .section-list h1{ font-size:14px;}
-.ali-section-fl .section-list .share a{ width:69px; font-size:12px;}
+.ali-section-fl .section-list .share a{font-size:12px;}
 .ali-section .fr-detailed div .fr-list a{ margin:0; width:100%;}
 .ali-section .fr-detailed div .fr-list a p{ width:100%; height:105px;}
 }
