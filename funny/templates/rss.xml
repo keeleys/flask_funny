@@ -19,7 +19,6 @@
                   <link>http://alifunny.com/{{ entry.id }}.html</link>
                   <guid>http://alifunny.com/{{ entry.id }}.html</guid>
                   <pubDate>{{ entry.create_time.strftime('%Y-%m-%dT%H:%M:%SZ') }}</pubDate>
-                  <description><![CDATA[{{ entry.title }}]]></description>
                   <content:encoded><![CDATA[<img src="{{ entry.img}}">]]></content:encoded>
                 </item>
             {% endfor %}
