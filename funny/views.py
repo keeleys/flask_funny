@@ -33,7 +33,7 @@ def detail(pro_id=0):
                            afterBlog=selectBefore(pro_id))
 
 
-# http://127.0.0.1:5000/list-123.html
+# http://127.0.0.1:5000/1-2.html
 @app.route('/list/<int:page>_<int:type>.html')
 def blog_list(type, page):
     if type == 0:
