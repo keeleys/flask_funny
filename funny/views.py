@@ -34,7 +34,7 @@ def detail(pro_id=0):
 
 
 # http://127.0.0.1:5000/list-123.html
-@app.route('/list/<int:type>_<int:page>.html')
+@app.route('/list/<int:page>_<int:type>.html')
 def blog_list(type, page):
     if type == 0:
         page_blog = Blog.query.order_by(Blog.create_time.desc()).paginate(page, PAGE_SIZE, False)

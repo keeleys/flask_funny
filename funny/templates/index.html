@@ -98,7 +98,7 @@
     <div class='pagination'>
         <span class='current'>${pages.pageNum}</span>
         {% for i in range(2,page.pages) %}
-        <a href='/list/{{typeIndex}}_{{ i }}.html' class='inactive' >{{ i }}</a>
+        <a href='/list/{{ i }}_{{typeIndex}}.html' class='inactive' >{{ i }}</a>
         {% endfor %}
     </div>
 </div>
