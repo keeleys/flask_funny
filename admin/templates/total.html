@@ -33,7 +33,6 @@
         show : true,
         feature : {
             mark : {show: true},
-            dataView : {show: true, readOnly: false},
             magicType : {
                 show: true,
                 type: ['pie', 'funnel'],
@@ -78,7 +77,8 @@
     require(
             [
                 'echarts',
-                'echarts/chart/pie' // 使用柱状图就加载bar模块，按需加载
+                'echarts/chart/pie',
+                'echarts/chart/funnel'
             ],
      function (ec) {
          var myChart = ec.init(document.getElementById('main'));
