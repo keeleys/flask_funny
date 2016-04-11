@@ -27,7 +27,7 @@ def page(page, site=None):
     if site is not None and site != "":
         select = select.filter_by(site=site)
 
-    select.order_by(Blog.create_time.desc()).order_by(Blog.type)
+    select = select.order_by(Blog.create_time.desc()).order_by(Blog.type)
 
     page_blog = select.paginate(page, PAGE_SIZE, False)
     return render_template('index.html', page=page_blog, sites=sites, site=site)
