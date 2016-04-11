@@ -1,25 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>抓取查看后台</title>
-
-    <!-- 新 Bootstrap 核心 CSS 文件 -->
-<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
-
-<!-- 可选的Bootstrap主题文件（一般不用引入） -->
-<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-
-<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
-<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
-
-<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-</head>
-<body>
-<div class="panel panel-default">
-  <div class="panel-heading">查看抓取列表</div>
-   <form class="form-inline" action="/">
+{% extends "base/layout.html" %}
+{% block content %}
+<form class="form-inline" action="/">
   <div class="form-group">
     <label for="exampleInputName2">站点</label>
       <select class="form-control" name="site">
@@ -31,7 +12,7 @@
   </div>
   <button type="submit" class="btn btn-default">查询</button>
 </form>
-</div>
+
 <div class="panel-body">
     <table class="table table-bordered">
       <tr>
@@ -60,8 +41,9 @@
 {{blocks.pager('/list',page.pages, page.page)}}
 
 <script>
-    site = '{{ params.site or '' }}'
-    $("select").val(site)
+site = '{{ params.site or '' }}'
+$("select").val(site)
+$(".navbar-nav li").eq(0).addClass('active')
 </script>
-</body>
-</html>
+{% endblock %}
+

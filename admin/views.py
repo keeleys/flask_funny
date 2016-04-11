@@ -35,3 +35,11 @@ def page(page):
 
     params = {'site': site}
     return render_template('index.html', page=page_blog, sites=sites, params=params)
+
+
+@app.route('/total.html')
+def total():
+    # 根据时间 查询所有站点的数量
+    totals = select_total()
+
+    return render_template('total.html',totals =totals)
