@@ -56,31 +56,12 @@
         {% endfor %}
     </table>
 </div>
-<nav>
-  <ul class="pagination">
-    {% if page.has_prev %}
-    <li>
-      <a href="/list/{{ page.prev_num}}.html" aria-label="Previous">
-        <span aria-hidden="true">&laquo;</span>
-      </a>
-    </li>
-  {% endif %}
+{% import "base/page.html" as blocks %}
+{{blocks.pager('/list',page.pages, page.page)}}
 
-  {% for i in range(0,page.pages) %}
-    <li><a href="/list/{{ i + 1 }}.html">{{ i + 1 }}</a></li>
-  {% endfor %}
-
-  {% if page.has_next %}
-    <li>
-      <a href="/list/{{page.next_num}}.html" aria-label="Next">
-        <span aria-hidden="true">&raquo;</span>
-      </a>
-    </li>
-  {% endif %}
-  </ul>
-</nav>
 <script>
-    site = {{ site or '' }}
+    site = '{{ params.site or '' }}'
+    $("select").val(site)
 </script>
 </body>
 </html>

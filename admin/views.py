@@ -15,12 +15,14 @@ PAGE_SIZE = 20
 @app.route('/')
 @app.route('/index.html')
 def index():
-    site = request.args.get("site")
-    return page(1, site)
+
+    return page(1)
 
 
 @app.route('/list/<int:page>.html')
-def page(page, site=None):
+def page(page):
+    site = request.args.get("site",None)
+
     sites = select_sites()
     select = Blog.query
 
@@ -30,4 +32,6 @@ def page(page, site=None):
     select = select.order_by(Blog.create_time.desc()).order_by(Blog.type)
 
     page_blog = select.paginate(page, PAGE_SIZE, False)
-    return render_template('index.html', page=page_blog, sites=sites, site=site)
+
+    params = {'site': site}
+    return render_template('index.html', page=page_blog, sites=sites, params=params)
