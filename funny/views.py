@@ -7,6 +7,7 @@ from funny import app, render_template, request
 from funny.blog_query import *
 
 from models import Blog
+from flask import abort,make_response
 
 PAGE_SIZE = 10
 
@@ -41,7 +42,8 @@ def blog_list(type, page):
     elif type == 1:
         page_blog = Blog.query.order_by(Blog.check_num.desc()).paginate(page, PAGE_SIZE, False)
     else:
-        page_blog = Blog.query.filter_by(type=(type - 1)).order_by(Blog.create_time.desc()).paginate(page, PAGE_SIZE, False)
+        page_blog = Blog.query.filter_by(type=(type - 1)).order_by(Blog.create_time.desc()).paginate(page, PAGE_SIZE,
+                                                                                                     False)
 
     return render_template('index.html', page=page_blog, typeIndex=type, random_blog=selectRandom(), )
 
@@ -72,3 +74,22 @@ def rss():
     return render_template('rss.xml', blogs=page.items)
 
 
+@app.route('/sitemap.xml')
+def sitemap():
+    months = select_all_month()
+    print months
+    resp = make_response(render_template('sitemap.xml',months=months))
+    resp.headers['Content-type'] = 'text/xml; charset=utf-8'
+    return resp
+
+@app.route('/sitemap_<date_str>.xml')
+def sitemap_day(date_str):
+    import re
+    r = re.match(r'^\d{4}-[0,1]\d$', date_str)
+    if not r:
+        abort(404)
+    blogs = select_by_month(date_str)
+
+    resp = make_response(render_template('sitemap_day.xml',blogs=blogs))
+    resp.headers['Content-type'] = 'text/xml; charset=utf-8'
+    return resp

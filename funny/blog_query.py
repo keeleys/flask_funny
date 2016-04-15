@@ -23,5 +23,10 @@ def selectRandom():
     return engine.execute(sql)
 
 
-if __name__ == '__main__':
-    pass
+def select_by_month(month):
+    sql = "select * from blog  where date_format(create_time,'%%Y-%%m')=%s order by id desc"
+    return engine.execute(sql,month)
+
+def select_all_month():
+    sql ="select DATE_FORMAT(create_time,'%%Y-%%m') months,max(create_time) as max_date from blog group by months order by months"
+    return engine.execute(sql)
